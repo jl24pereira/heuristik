@@ -17,3 +17,9 @@ spring:
       hibernate:
         format_sql: true
     open-in-view: false
+  ai:
+    ollama:
+      embedding:
+        enabled: true
+        model: paraphrase-multilingual
+        base-url: http://localhost:11434
