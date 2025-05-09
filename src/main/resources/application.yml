@@ -23,3 +23,12 @@ spring:
         enabled: true
         model: paraphrase-multilingual
         base-url: http://localhost:11434
+    vectorstore:
+      pgvector:
+        index-type: hnsw
+        distance-type: cosine_distance
+        dimensions: 1536
+        max-document-batch-size: 10000
+
+
+
