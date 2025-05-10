@@ -140,3 +140,4 @@ out/
 bin/
 
 
+!/database/pgdata.tar.gz

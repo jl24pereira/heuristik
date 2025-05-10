@@ -5,6 +5,8 @@ import com.kalapa.heuristik.domain.repository.DailySalesSummaryRepository;
 import com.kalapa.heuristik.domain.service.EmbeddingGenerator;
 import com.kalapa.heuristik.interfaces.dto.ResumenVentasEmbeddingDto;
 import lombok.RequiredArgsConstructor;
+import org.springframework.ai.document.Document;
+import org.springframework.ai.vectorstore.VectorStore;
 import org.springframework.stereotype.Service;
 
 import java.time.*;
@@ -16,7 +18,7 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 public class DailySalesEmbeddingService {
 
-    private final DailySalesSummaryRepository dailySalesSummaryRepository;
+        private final DailySalesSummaryRepository dailySalesSummaryRepository;
     private final EmbeddingGenerator embeddingGenerator;
 
     public List<ResumenVentasEmbeddingDto> generateEmbedding(String month) {
@@ -25,6 +27,7 @@ public class DailySalesEmbeddingService {
         LocalDate end = yearMonth.atEndOfMonth();
 
         List<DailySalesSummary> summaries = dailySalesSummaryRepository.findByDayBetween(start, end);
+        int newTest = 1;
 
         return summaries.stream()
                 .map(summary -> {

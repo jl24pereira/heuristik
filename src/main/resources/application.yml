@@ -5,9 +5,9 @@ spring:
   application:
     name: heuristik
   datasource:
-    url: jdbc:postgresql://localhost:5432/heuristik_db
-    username: root
-    password: root
+    url: ${POSTGRES_DATASOURCE:jdbc:postgresql://localhost:5432/heuristik_db}
+    username: ${POSTGRES_USER:root}
+    password: ${POSTGRES_PASSWORD:root}
     driver-class-name: org.postgresql.Driver
   jpa:
     show-sql: true
@@ -22,7 +22,7 @@ spring:
       embedding:
         enabled: true
         model: paraphrase-multilingual
-        base-url: http://localhost:11434
+        base-url: ${OLLAMA_BASE_URL:http://localhost:11434}
     vectorstore:
       pgvector:
         index-type: hnsw

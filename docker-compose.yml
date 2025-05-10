@@ -17,6 +17,23 @@ services:
       - ollama:/root/.ollama
     pull_policy: always
 
+  ai-service:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: ai-service
+    ports:
+      - "8080:8080"
+    depends_on:
+      - postgres
+      - ollama
+    environment:
+      - POSTGRES_DB=${POSTGRES_DB}
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_DATASOURCE=jdbc:postgresql://postgres:5432/${POSTGRES_DB}
+      - OLLAMA_BASE_URL=${OLLAMA_BASE_URL}
+
 volumes:
   pgdata:
   ollama:
