@@ -22,7 +22,7 @@ spring:
       embedding:
         enabled: true
         model: paraphrase-multilingual
-        base-url: ${OLLAMA_BASE_URL:http://localhost:11434}
+      base-url: ${OLLAMA_BASE_URL:http://localhost:11434}
     vectorstore:
       pgvector:
         index-type: hnsw
