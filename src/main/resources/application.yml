@@ -18,17 +18,14 @@ spring:
         format_sql: true
     open-in-view: false
   ai:
+    openai:
+      api-key: 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
     ollama:
       embedding:
         enabled: true
         model: paraphrase-multilingual
       base-url: ${OLLAMA_BASE_URL:http://localhost:11434}
-    vectorstore:
-      pgvector:
-        index-type: hnsw
-        distance-type: cosine_distance
-        dimensions: 1536
-        max-document-batch-size: 10000
+
 
 
 

@@ -1,24 +1,33 @@
 package com.kalapa.heuristik.interfaces.controller;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.kalapa.heuristik.application.service.DailySalesEmbeddingService;
-import com.kalapa.heuristik.interfaces.dto.ResumenVentasEmbeddingDto;
+import com.kalapa.heuristik.interfaces.dto.SalesAnalysisResponse;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.ai.document.Document;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-@RequestMapping("/ai/embedding")
+@RequestMapping("/ai/sales")
 @RequiredArgsConstructor
 public class EmbeddingTestController {
 
     private final DailySalesEmbeddingService ventasPorPeriodoService;
 
-    @GetMapping("/resumen-mes/{mes}")
-    public List<ResumenVentasEmbeddingDto> generarEmbeddingResumenMes(@PathVariable String mes) {
+    @GetMapping("/generate/{mes}")
+    public String generarEmbeddingResumenMes(@PathVariable String mes) {
         return ventasPorPeriodoService.generateEmbedding(mes);
+    }
+
+    @GetMapping("/prompt/{prompt}")
+    public List<Document> buscar(@PathVariable String prompt) {
+        return ventasPorPeriodoService.generateMessage(prompt);
+    }
+
+    @GetMapping("/summary/{month}")
+    public SalesAnalysisResponse analizarPorMes(@PathVariable String month) throws JsonProcessingException {
+        return ventasPorPeriodoService.generateAISummary(month);
     }
 }
