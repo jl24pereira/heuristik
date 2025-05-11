@@ -19,7 +19,7 @@ spring:
     open-in-view: false
   ai:
     openai:
-      api-key: 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
+      api-key: ${OPEN_AI_KEY}
     ollama:
       embedding:
         enabled: true
