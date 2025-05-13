@@ -19,7 +19,7 @@ spring:
     open-in-view: false
   ai:
     openai:
-      api-key: ${OPEN_AI_KEY}
+      api-key: ${OPENAI_KEY}
     ollama:
       embedding:
         enabled: true

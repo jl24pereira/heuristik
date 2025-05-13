@@ -141,3 +141,4 @@ bin/
 
 
 /database/pgdata.tar.gz
+.env

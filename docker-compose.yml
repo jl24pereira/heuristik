@@ -33,6 +33,7 @@ services:
       - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
       - POSTGRES_DATASOURCE=jdbc:postgresql://postgres:5432/${POSTGRES_DB}
       - OLLAMA_BASE_URL=http://ollama:11434
+      - OPENAI_KEY=${OPENAI_KEY}
 
 volumes:
   pgdata:
