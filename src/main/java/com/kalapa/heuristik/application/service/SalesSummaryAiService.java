@@ -21,7 +21,6 @@ import org.springframework.stereotype.Service;
 import java.time.*;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
-import java.time.format.ResolverStyle;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -164,11 +163,11 @@ public class SalesSummaryAiService {
                 %s
                 
                 ### Tareas
-                1. Verifica que los totales diarios sumen el monto y transacciones
-                   indicados en los datos numéricos.
-                2. Identifica tendencias, retos y oportunidades.
-                3. Propón acciones de mercadeo y administrativas (máx. 3 por sección).
-                4. Completa las claves del esquema JSON.
+                1. Detecta días atípicos (outliers) y descríbelos brevemente.
+                2. Verifica que los totales diarios sumen el monto y transacciones indicados en los datos numéricos.
+                3. Identifica tendencias, retos y oportunidades.
+                4. Propón acciones de mercadeo y administrativas (máx. 3 por sección).
+                5. Completa las claves del esquema JSON.
                 
                 Devuelve ÚNICAMENTE el JSON.
                 </user>
