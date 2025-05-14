@@ -100,7 +100,7 @@ docker exec -it ollama ollama pull paraphrase-multilingual
 
 > La aplicación escucha en `http://localhost:8080`.
 ---
-## 🚀 Flujo de uso
+## Flujo de uso
 
 1. **Generar embeddings del mes (una sola vez)**
 
