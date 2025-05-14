@@ -105,23 +105,13 @@ docker exec -it ollama ollama pull paraphrase-multilingual
 1. **Generar embeddings del mes (una sola vez)**
 
    ```bash
-   curl -X POST "http://localhost:8080/api/ai/sales/embeddings?month=01-2024"
-   # → "Vectores almacenados exitosamente"
+   curl -X GET "http://localhost:8080/api/ai/sales/embeddings?month=01-2024"
    ```
 
 2. **Obtener análisis ejecutivo**
 
    ```bash
-   curl -X GET "http://localhost:8080/api/ai/sales/analysis?month=01-2024" \
-        -H "Accept: application/json"
-   {
-     "generalResume": "Resumen de enero…",
-     "performance": ["…"],
-     "tendencies":  ["…"],
-     "problems":    ["…"],
-     "recommendations": ["…"],
-     "conclusions": "…"
-   }
+   curl -X GET "http://localhost:8080/api/ai/sales/analysis?month=01-2024" -H "Accept: application/json"
    ```
 ---
 ## Detalles de implementación

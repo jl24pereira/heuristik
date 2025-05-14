@@ -165,7 +165,7 @@ public class SalesSummaryAiService {
                 
                 ### Tareas
                 1. Verifica que los totales diarios sumen el monto y transacciones
-                   indicados en los datos numéricos (si no coinciden, indícalo en "problems").
+                   indicados en los datos numéricos.
                 2. Identifica tendencias, retos y oportunidades.
                 3. Propón acciones de mercadeo y administrativas (máx. 3 por sección).
                 4. Completa las claves del esquema JSON.
