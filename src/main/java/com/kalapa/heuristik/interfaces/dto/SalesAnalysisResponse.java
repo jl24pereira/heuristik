@@ -7,7 +7,7 @@ public record SalesAnalysisResponse(
         List<String> performance,
         List<String> tendencies,
         List<String> problems,
-        List<String> recomendations,
+        List<String> recommendations,
         String conclusions
 ) {
 }
