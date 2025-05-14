@@ -14,12 +14,12 @@ public class EmbeddingTestController {
     private final SalesSummaryAiService salesSummaryAiService;
 
     @PostMapping("/embeddings")
-    public String generateMonthlyEmbeddings(@RequestParam("month") String month) {
+    public String generateMonthlyEmbeddings(@RequestParam(value = "month",defaultValue = "01-2024") String month) {
         return salesSummaryAiService.generateEmbedding(month);
     }
 
     @GetMapping("/analysis")
-    public SalesAnalysisResponse getMonthlySalesAnalysis(@RequestParam("month") String month) throws JsonProcessingException {
+    public SalesAnalysisResponse getMonthlySalesAnalysis(@RequestParam(value = "month",defaultValue = "01-2024") String month) throws JsonProcessingException {
         return salesSummaryAiService.generateAISummary(month);
     }
 }

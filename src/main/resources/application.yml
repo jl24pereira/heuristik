@@ -5,7 +5,7 @@ spring:
   application:
     name: heuristik
   datasource:
-    url: ${POSTGRES_DATASOURCE:jdbc:postgresql://localhost:5432/heuristik_db}
+    url: ${POSTGRES_DATASOURCE_URL:jdbc:postgresql://localhost:5432/heuristik_db}
     username: ${POSTGRES_USER:root}
     password: ${POSTGRES_PASSWORD:root}
     driver-class-name: org.postgresql.Driver
