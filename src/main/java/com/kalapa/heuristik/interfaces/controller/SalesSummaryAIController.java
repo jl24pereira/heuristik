@@ -9,11 +9,11 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/api/ai/sales")
 @RequiredArgsConstructor
-public class EmbeddingTestController {
+public class SalesSummaryAIController {
 
     private final SalesSummaryAiService salesSummaryAiService;
 
-    @PostMapping("/embeddings")
+    @GetMapping("/embeddings")
     public String generateMonthlyEmbeddings(@RequestParam(value = "month",defaultValue = "01-2024") String month) {
         return salesSummaryAiService.generateEmbedding(month);
     }

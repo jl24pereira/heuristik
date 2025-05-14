@@ -240,7 +240,7 @@ public class SalesSummaryAiService {
     }
 
     private YearMonth parseMonthStrict(String raw) {
-        DateTimeFormatter MONTH_FMT = DateTimeFormatter.ofPattern("MM-yyyy").withResolverStyle(ResolverStyle.STRICT);
+        DateTimeFormatter MONTH_FMT = DateTimeFormatter.ofPattern("MM-yyyy");
         try {
             return YearMonth.parse(raw, MONTH_FMT);
         } catch (DateTimeParseException ex) {
